@@ -6,16 +6,11 @@ import 'animate.css/animate.min.css';
 
 const AnimeList = ({ api }) => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
-
     useEffect(() => {
         let intervalId;
-
         const handleInterval = () => {
-            // Increment the index to show the next image
             setHoveredIndex((prevIndex) => (prevIndex + 1) % api.data.length);
         };
-
-        // Start the interval when the component mounts
         intervalId = setInterval(handleInterval, 2000);
 
         // Clean up the interval when the component unmounts
@@ -29,10 +24,8 @@ const AnimeList = ({ api }) => {
     const handleMouseLeave = () => {
         setHoveredIndex(null);
     };
-    // animate__animated animate__fadeInUp animate__delay-2
-
     return (
-        <div className="grid grid-cols-2 pb-10 mt-4 gap-6 mx-4 md:grid-cols-5 xs:grid-cols-4 lg:grid-cols-6 animate__animated animate__fadeInDown animate__delay-2s">
+        <div className="grid grid-cols-2 pb-10 mt-4 gap-6 mx-4 md:grid-cols-5 xs:grid-cols-4 lg:grid-cols-6 animate__animated animate__fadeInRight animate__delay-1s">
             {api.data?.map((anime, index) => {
                 const isHovered = hoveredIndex === index;
                 const containerStyle = {
@@ -51,7 +44,7 @@ const AnimeList = ({ api }) => {
                 const buttonStyle = {
                     opacity: isHovered ? 1 : 0,
                     transform: isHovered ? 'scale(1)' : 'scale(0.5)',
-                    transition: 'opacity 0.2s ease, transform 0.2s ease',
+                    transition: 'opacity 1s ease, transform 1s ease',
                 };
 
                 return (

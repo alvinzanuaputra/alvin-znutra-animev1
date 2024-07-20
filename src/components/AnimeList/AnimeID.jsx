@@ -29,14 +29,14 @@ const AnimeID = ({ api }) => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                transition: 'all 0.2s ease-in-out',
-                transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+                transition: 'all 0.5s ease-in-out',
+                transform: isHovered ? 'scale(1.1)' : 'scale(1)',
                 filter: isHovered ? 'blur(3px) brightness(0.6)' : 'blur(0) brightness(1)',
             };
             const buttonStyle = {
                 opacity: isHovered ? 1 : 0,
-                transform: isHovered ? 'scale(1)' : 'scale(0.5)',
-                transition: 'opacity 0.3s ease, transform 0.3s ease',
+                transform: isHovered ? 'scale(1)' : 'scale(0.1)',
+                transition: 'opacity 0.3s ease, transform 0.5s ease',
             };
 
             return (
@@ -74,7 +74,7 @@ const AnimeID = ({ api }) => {
                                 </div>
                             )}
                         </div>
-                        <h3 key={`title-${index}`} className="font-bold text-xs p-4">{anime.title}</h3>
+                        <h3 key={`title-${index}`} className="hover:text-color-accent text-color-primary font-bold text-xs p-4">{anime.title}</h3>
                     </Link>
                 </div>
             );

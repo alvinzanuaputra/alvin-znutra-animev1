@@ -99,17 +99,16 @@ const CommentInput = ({ anime_mal_id, user_email, username, anime_title }) => {
             <div className="flex items-center justify-between">
                 <div className="flex items-center py-1 px-2 pr-3 bg-color-hitam text-color-hitam rounded-[1px] border border-color-accent shadow-sm shadow-color-accent  hover:text-color-hitam text-[10px] 
                     duration-500 transition-all">
-                    <p className=" text-color-primary text-[9px] lg:text-[14px]" style={{ fontStyle: "italic" }}>
+                    <h3 className=" text-color-primary text-[9px] lg:text-[14px]" style={{ fontStyle: "italic" }}>
                         Status :
-                    </p>
+                    </h3>
                     {isCreated && (
-                        <p className={`ml-1 text-[9px] lg:text-[14px] text-color-accent ${animationClass}`}
+                        <h3 className={`ml-1 text-[9px] lg:text-[14px] text-color-accent ${animationClass}`}
                             style={{ fontStyle: "italic" }}>
                             Sended ...
-                        </p>
+                        </h3>
                     )}
                 </div>
-
                 <button
                     onClick={handlePost}
                     className="py-1 px-2 bg-color-accent text-color-hitam rounded-[1px] border border-color-hitam shadow-sm shadow-color-primary hover:text-color-hitam  font-bold text-[10px] lg:text-[14px] 
@@ -120,12 +119,6 @@ const CommentInput = ({ anime_mal_id, user_email, username, anime_title }) => {
                 </button>
             </div>
             <h4 className="text-color-primary text-xs lg:text-[16px] mt-6 mb-2 ">{`Your Comments Just Now : ${commentCount} `}</h4>
-
-
-
-
-            
-
         </div>
 
 

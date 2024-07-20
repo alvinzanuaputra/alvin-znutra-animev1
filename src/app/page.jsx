@@ -7,44 +7,23 @@ import ShareButton from "@/components/AnimeList/ShareButton"
 
 
 const Page = async () => {
-
-
-
     let reviewAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
     reviewAnime = reproduce(reviewAnime, 18);
-
-    const topAnime = await getAnimeResponse("top/anime");
-
-
+    const topAnime = await getAnimeResponse("top/anime", "limit=18")
 
     return (
         <div>
-
             <section>
                 <Header title="Top Anime" linkTitle="See All" linkHref="/populer" />
                 <ReviewList api={topAnime} />
             </section>
-
-
             <section>
                 <Header title="Recommedation Anime" linkTitle="See All" linkHref="/populer" />
                 <AnimeList api={reviewAnime} />
             </section>
-
-            {/* <section>
-                <Header title="Recent Anime" linkTitle="VIEW ALL" linkHref="/populer" />
-                <HeaderAnime api={headerAnime} />
-            </section> */}
-
-
-
-
-
             <footer className="border-t-2 border-color-third pb-6 gap-10 pt-6">
-
                 <div className="flex flex-wrap border-b-2 border-color-third shadow-lg pb-6">
                     <div className="mx-4 lg:flex flex-rows-4">
-
                         <div className="w-full px-4 mb-2">
                             <h2 className="font-bold text-3xl text-color-accent mb-5 mt-2"
                                 style={{
@@ -52,7 +31,6 @@ const Page = async () => {
                                 }}
                             >ZNUAVIN</h2>
                             <p className="text-xs text-color-primary grid mb-16 md:w-1/4 lg:w-1/2">
-
                                 ZNUAVIN, menjadi destinasi utama bagi penggemar anime di Indonesia. Menyajikan list anime, ZNUAVIN berkomitmen memberikan akses tanpa batas kepada para pecinta anime.  ZNUAVIN hadir untuk memenuhi kebutuhan hiburan anime tanpa biaya berlangganan, seperti Netflix, Disney+, HBO, Apple TV+, dan Amazon Prime Video.
 
                                 Kami berupaya memberikan pengalaman untuk melihat anime populer yang memuaskan untuk para penikmat anime di Indonesia. Penting untuk dicatat bahwa ZNUAVIN khusus fokus pada anime dan tidak menyediakan konten film atau serial TV dari Indonesia.
@@ -61,8 +39,6 @@ const Page = async () => {
 
                                 <span className="font-bold">(Website ini masih berada pada tahap pengembangan).</span></p>
                         </div>
-
-
                         <div className="w-full gap-1 px-4 mb-12 md:w-1/5 lg:mr-20">
                             <h3 className="font-bold text-color-primary text-xl mb-5 pt-4">Contact Me</h3>
                             <p className="text-sm inline-block text-color-accent hover:text-color-primary hover:underline duration-500 transition-all"><a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=zanualvin06@gmail.com">zanualvin06@gmail.com</a></p>
@@ -71,8 +47,6 @@ const Page = async () => {
                             <p className="text-[13px] pb-8 text-color-accent hover:text-color-primary hover:underline duration-500 transition-all lg:text-[14px]"><a href="https://wa.me/6281217835337">6281217835337</a></p>
 
                         </div>
-
-
                         <div className="w-full px-4 mb-12 pb-8 md:w-1/2 pt-4">
                             <h3 className="font-semibold text-xl text-color-primary mb-5 lg:mr-20">Original Series</h3>
                             <ul className="text-color-accent grid grid-cols-1">
@@ -84,7 +58,6 @@ const Page = async () => {
                                 <li className="text-sm inline-block text-color-accent hover:text-color-primary hover:underline duration-500 transition-all">The CW</li>
                             </ul>
                         </div>
-
                         <div className="w-full px-4 pb-7 lg:w-1/3 md:w-1/3 pt-4">
                             <h3 className="font-semibold text-xl text-color-primary mb-5">Category</h3>
                             <ul className="text-color-accent grid grid-cols-1">
@@ -99,12 +72,8 @@ const Page = async () => {
                                 <li className="text-sm inline-block text-color-accent hover:text-color-primary hover:underline duration-500 transition-all">Slice of Life</li>
                             </ul>
                         </div>
-
                     </div>
-
-
                 </div>
-
                 <div className="lg:w-full lg:flex flex-cols-1">
                     <div className="justify-items-start pt-1 lg:w-full lg:flex lg:pt-10 lg:justify-between">
                         <h1 className="mx-8 pt-2 text-color-primary text-sm pb-3 border-t-color-accent">
@@ -116,13 +85,11 @@ const Page = async () => {
                                 className="w-9 h-9 flex justify-center items-center rounded-lg overflow-hidden border border-color-accent hover:bg-color-hitam hover:border-color-dark duration-500 transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffff" className="hover:fill-color-accent duration-500 transition-all" viewBox="0 0 256 256"><path d="M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z"></path></svg>
                             </a>
-
                             <a href="https://www.instagram.com/znualvin_"
                                 target="_blank"
                                 className="w-9 h-9 flex justify-center items-center rounded-lg overflow-hidden border border-color-accent hover:bg-color-hitam hover:border-color-dark duration-500 transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#ffff" className="hover:fill-color-accent duration-500 transition-all" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
                             </a>
-
                             <a href="https://www.facebook.com/profile.php?id=100070957315001"
                                 target="_blank"
                                 className="w-9 h-9 flex justify-center items-center rounded-lg overflow-hidden border border-color-accent hover:bg-color-hitam hover:border-color-dark duration-500 transition-all">

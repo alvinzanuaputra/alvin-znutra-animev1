@@ -12,9 +12,9 @@ const CommentBox = async ({ anime_mal_id }) => {
     return (
         <div className='grid gird-col mb-10 border-t-2 border-color-accent gap-4 '>
             <div className="w-44 lg:w-56 flex items-center text-color-accent rounded-[1px] border border-color-accent">
-                <p className="text-[9px] lg:text-[12px] px-1 mt-1 mb-0.5 bg-color-hitam ">
+                <h3 className="text-[9px] lg:text-[12px] px-1 mt-1 mb-0.5 bg-color-hitam ">
                     Scroll Your Box Comment For More
-                </p>
+                </h3>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className=""
@@ -38,14 +38,13 @@ const CommentBox = async ({ anime_mal_id }) => {
             </div>
 
             {comments.length === 0 && (
-                <p className="text-[10px] lg:text-[16px] items-center text-color-primary px-1 mt-1 mb-0.5 
+                <div className="text-[10px] lg:text-[16px] mt-10 text-center text-color-primary px-1 mb-0.5 
                 animate__animated animate__delay-5s animate__fadeInLeft">
                     "Comment Not Found" 
-                    <div>
-                    <span className="text-color-accent underline"> You must be sign in first to see all</span>
-                    </div>
-                    <div className="font-bold">(Suggest = Browser Chrome)</div>
-                </p>
+                    <p>
+                    <span className="text-color-accent">Or you must be sign in first to see all</span>
+                    </p>
+                </div>
                 
             )}
 
